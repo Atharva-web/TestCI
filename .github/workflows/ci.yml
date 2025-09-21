@@ -39,7 +39,7 @@ jobs:
 
       - name: Test /hello endpoint
         run: |
-          curl -f http://localhost:8080/hello
+          curl -f http://localhost:8080/
 
       - name: Stop Spring Boot
         run: |
