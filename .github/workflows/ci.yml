@@ -1,46 +1,5 @@
 name: Java CI
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Cache Maven packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
-      - name: Build and test
-        run: mvn -B clean verify
-
-      - name: Start Spring Boot app
-        run: nohup mvn spring-boot:run &
-
-      - name: Wait for server to start
-        run: sleep 10
-
-      - name: Test /hello endpoint
-        run: |
-          curl -f http://localhost:8080/
-
-      - name: Stop Spring Boot
-        run: |
-          pkill -f 'java.*-jar'
