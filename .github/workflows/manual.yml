@@ -4,11 +4,11 @@ on:
     inputs:
       name:
         description: 'Name of the person to greet'
-        required: true
+        required: false
         type: string
       greeting:
         description: 'Type of greeting'
-        required: true
+        required: false
         type: string
 jobs:
   greet:
