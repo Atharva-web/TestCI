@@ -3,16 +3,16 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Name of the person to greet'
+        description: "Name of the person to greet"
         required: true
         type: string
       greeting:
-        description: 'Type of greeting'
+        description: "Type of greeting"
         required: true
         type: string
 jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Display greeting'
+      - name: "Display greeting"
         run: echo "${{inputs.greeting}}, ${{inputs.name}}!"
