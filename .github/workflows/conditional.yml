@@ -5,7 +5,7 @@ jobs:
     if: github.repository == 'Atharva-web/abcd'
     runs-on: ubuntu-latest
     steps:
-      - name: "Hello World"
+      - name: "Hello World.."
         run: echo "Hello World!"
   goodbye-moon:
     runs-on: ubuntu-latest
