@@ -2,7 +2,7 @@ name: Conditional
 on: [push]
 jobs:
   hello-world:
-    if: github.repository == "Atharva-web/abcd"
+    if: github.repository == 'Atharva-web/abcd'
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World"
