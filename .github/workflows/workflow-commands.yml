@@ -1,0 +1,10 @@
+name: Workflow Commands
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step-1
+        run: MY_VAL=hello >> $GITHUB_ENV
+      - name: step-2
+        run: echo $MY_VAL
