@@ -1,12 +1,10 @@
-name: Expression Functions Demo
-
+name: "Expression Functions Demo"
 on:
   push:
     branches:
       - main
   issues:
     types: [opened, labeled]
-
 jobs:
   expression-functions:
     runs-on: ubuntu-latest
