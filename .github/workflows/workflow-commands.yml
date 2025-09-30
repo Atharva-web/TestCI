@@ -17,6 +17,8 @@ jobs:
         run: echo $GITHUB_ENV
   job3:
     runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.output1.outputs.result }}
     steps:
       - name: set output param
         id: output1
@@ -25,4 +27,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: use output param
-        run: echo ${{needs.job3.outputs.result}}
+        run: echo ${{ needs.job3.outputs.result }}
