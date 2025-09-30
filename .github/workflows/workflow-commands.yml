@@ -25,4 +25,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: use output param
-        run: echo ${{steps.output1.outputs.result}}
+        run: echo ${{needs.job3 .outputs.result}}
