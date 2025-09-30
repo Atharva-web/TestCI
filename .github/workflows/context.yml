@@ -9,5 +9,5 @@ jobs:
           echo "Github Action: " $myAction
           echo "Github Actor: " $myActor
         env:
-          myAction: ${{ github.actions }}
+          myAction: ${{ github.action }}
           myActor: ${{ github.actor }}
