@@ -15,3 +15,12 @@ jobs:
         run: echo $MY_VAL
       - name: step-2
         run: echo $GITHUB_ENV
+  job3:
+    steps:
+      - name: set output param
+        id: output1
+        run: echo "result = output_value" >> $GITHUB_OUTPUT
+  job4:
+    steps:
+      - name: use output param
+        run: echo ${{steps.output1.outputs.result}}
