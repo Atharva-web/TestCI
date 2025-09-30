@@ -20,9 +20,9 @@ jobs:
     steps:
       - name: set output param
         id: output1
-        run: echo "result = output_value" >> $GITHUB_OUTPUT
+        run: echo "result=output_value" >> $GITHUB_OUTPUT
   job4:
     runs-on: ubuntu-latest
     steps:
       - name: use output param
-        run: echo ${{needs.job3 .outputs.result}}
+        run: echo ${{needs.job3.outputs.result}}
