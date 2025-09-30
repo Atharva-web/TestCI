@@ -13,3 +13,5 @@ jobs:
     steps:
       - name: step-1
         run: echo $MY_VAL
+      - name: step-2
+        run: echo $GITHUB_ENV
