@@ -1,7 +1,7 @@
 name: Workflow Commands
 on: [push]
-runs-on: ubuntu-latest
 jobs:
+  runs-on: ubuntu-latest
   job1:
     steps:
       - name: step-1
@@ -16,11 +16,13 @@ jobs:
       - name: step-2
         run: echo $GITHUB_ENV
   job3:
+    runs-on: ubuntu-latest
     steps:
       - name: set output param
         id: output1
         run: echo "result = output_value" >> $GITHUB_OUTPUT
   job4:
+    runs-on: ubuntu-latest
     steps:
       - name: use output param
         run: echo ${{steps.output1.outputs.result}}
