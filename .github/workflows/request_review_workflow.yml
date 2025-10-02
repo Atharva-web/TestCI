@@ -1,0 +1,13 @@
+name: "Test pull request and review events"
+on: [pull_request_review]
+jobs:
+  pullRequestJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Pull Request"
+        run: echo "triggered on pull request"
+  pullRequestReviewJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Pull Request Review"
+        run: echo "triggered on pull request review"
